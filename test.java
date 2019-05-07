@@ -32,8 +32,10 @@ public class test{
                 int lineSum=0;
                 while(tokenSc.hasNext()){
                     String temp = tokenSc.next();
-                    int num = Integer.parseInt(temp);
-                    lineSum= lineSum+num;
+		    if(isInteger(temp)){
+                        int num = Integer.parseInt(temp);
+                        lineSum= lineSum+num;
+		    }
                 }
                 System.out.println(lineSum);
             }
@@ -43,11 +45,20 @@ public class test{
         while(lineSc.hasNext()){
             String line = lineSc.nextLine();
             Scanner tokenSc = new Scanner(line);
-            int lineSum=Integer.parseInt(tokenSc.next());
+	    String start = tokenSc.next();
+	    while((!isInteger(start))&&tokenSc.hasNext()){
+            	start=tokenSc.next();
+	    }
+	    if(!isInteger(start)){
+		continue;
+	    }
+	    int lineSum = Integer.parseInt(start);
             while(tokenSc.hasNext()){
                 String temp = tokenSc.next();
-                int num = Integer.parseInt(temp);
-                lineSum= lineSum-num;
+		if(isInteger(temp)){
+                    int num = Integer.parseInt(temp);
+                    lineSum= lineSum-num;
+		}
             }
             System.out.println(lineSum);
         }
@@ -65,5 +76,21 @@ public class test{
             System.out.println("INVALID FUNTION!!!");
 	    functionCaller(inFile);
         }
+    }
+    public static boolean isInteger(String s) {
+	int radix =10;
+        if(s.isEmpty()){
+	    return false;
+	}
+        for(int i = 0; i < s.length(); i++) {
+            if(i == 0 && s.charAt(i) == '-') {
+                if(s.length() == 1) return false;
+                else continue;
+            }
+            if(Character.digit(s.charAt(i),radix) < 0){
+		 return false;
+	    }
+        }
+        return true;
     }
 }
