@@ -62,7 +62,7 @@ public class test{
         }else if(func.equals("sub")){
             subtract(inFile);
         }else{
-            System.out.println("IVALID FUNTION!!!");
+            System.out.println("INVALID FUNTION!!!");
 	    functionCaller(inFile);
         }
     }
