@@ -86,7 +86,7 @@ public class test{
     public static void functionCaller(File inFile) throws FileNotFoundException{
 	Scanner sc = new Scanner(System.in);
 	//gets user input
-        System.out.print("Enter a function (options are 'sub' or 'sum'): ");
+        System.out.print("Enter a function (options are 'sub','sum', or 'multi'): ");
         String func = sc.next();
         func=func.toLowerCase();
 	//checks to see if input is valid
@@ -94,6 +94,8 @@ public class test{
             sum(inFile);
         }else if(func.equals("sub")){
             subtract(inFile);
+        }else if(func.equals("multi")){
+	    multi(inFile);
         }else{
             System.out.println("INVALID FUNCTION!!!");
 	    //recursive call to functionCaller to avoid a invalid input
@@ -122,5 +124,28 @@ public class test{
 	    }
         }
         return true;
+    }
+    public static void multi(File input) throws FileNotFoundException{
+	Scanner lineSc = new Scanner(input);
+        while(lineSc.hasNext()){
+            //scanner for each individual line in the file
+            String line = lineSc.nextLine();
+            //checks if the line is empty
+            if(line.length() >0){
+                //scanner for each token in the line
+                Scanner tokenSc = new Scanner(line);
+                int result=1;
+                //sums the line
+                while(tokenSc.hasNext()){
+                    String temp = tokenSc.next();
+                    if(isInteger(temp)){
+                        int num = Integer.parseInt(temp);
+                        result= result*num;
+                    }
+                }
+                //prints the sum of that line
+                System.out.println(result);
+            }
+        }
     }
 }
