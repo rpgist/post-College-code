@@ -125,6 +125,7 @@ public class test{
         }
         return true;
     }
+    //multi method is basically sum method but with a * and result starting at 1
     public static void multi(File input) throws FileNotFoundException{
 	Scanner lineSc = new Scanner(input);
         while(lineSc.hasNext()){
