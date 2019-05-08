@@ -46,23 +46,25 @@ public class test{
         Scanner lineSc = new Scanner(input);
         while(lineSc.hasNext()){
             String line = lineSc.nextLine();
-            Scanner tokenSc = new Scanner(line);
-	    String start = tokenSc.next();
-	    while((!isInteger(start))&&tokenSc.hasNext()){
-            	start=tokenSc.next();
+	    if(line.length() > 0){
+                Scanner tokenSc = new Scanner(line);
+	        String start = tokenSc.next();
+	        while((!isInteger(start))&&tokenSc.hasNext()){
+            	    start=tokenSc.next();
+	        }
+	        if(!isInteger(start)){
+		    continue;
+	        }
+	        int lineSum = Integer.parseInt(start);
+                while(tokenSc.hasNext()){
+                    String temp = tokenSc.next();
+		    if(isInteger(temp)){
+                        int num = Integer.parseInt(temp);
+                        lineSum= lineSum-num;
+		    }
+                }
+                System.out.println(lineSum);
 	    }
-	    if(!isInteger(start)){
-		continue;
-	    }
-	    int lineSum = Integer.parseInt(start);
-            while(tokenSc.hasNext()){
-                String temp = tokenSc.next();
-		if(isInteger(temp)){
-                    int num = Integer.parseInt(temp);
-                    lineSum= lineSum-num;
-		}
-            }
-            System.out.println(lineSum);
         }
     }
     public static void functionCaller(File inFile) throws FileNotFoundException{
