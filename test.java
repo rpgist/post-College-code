@@ -25,9 +25,10 @@ public class test{
 
     }
     public static void sum(File input) throws FileNotFoundException{
-   	 Scanner lineSc = new Scanner(input);
-            while(lineSc.hasNext()){
-                String line = lineSc.nextLine();
+        Scanner lineSc = new Scanner(input);
+        while(lineSc.hasNext()){
+            String line = lineSc.nextLine();
+	    if(line.length() >0){
                 Scanner tokenSc = new Scanner(line);
                 int lineSum=0;
                 while(tokenSc.hasNext()){
@@ -39,6 +40,7 @@ public class test{
                 }
                 System.out.println(lineSum);
             }
+        }
     }
     public static void subtract(File input) throws FileNotFoundException{
         Scanner lineSc = new Scanner(input);
