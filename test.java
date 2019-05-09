@@ -5,7 +5,9 @@ and either sums them or subtracts them.
 
 import java.util.Scanner;
 import java.io.*;
+
 public class test{
+
     public static void main(String [] args){
     	System.out.print("Enter File Name: ");
 	Scanner sc = new Scanner(System.in);
@@ -26,6 +28,7 @@ public class test{
 	}
 
     }
+
     //takes file from functionCaller and sums the contents of the file
     public static void sum(File input) throws FileNotFoundException{
         Scanner lineSc = new Scanner(input);
@@ -50,6 +53,7 @@ public class test{
             }
         }
     }
+
     //takes file as input from functionCaller and subtracts the contents
     public static void subtract(File input) throws FileNotFoundException{
         Scanner lineSc = new Scanner(input);
@@ -82,6 +86,7 @@ public class test{
 	    }
         }
     }
+
     //input is the file from main and decides what function to run
     public static void functionCaller(File inFile) throws FileNotFoundException{
 	Scanner sc = new Scanner(System.in);
@@ -102,6 +107,7 @@ public class test{
 	    functionCaller(inFile);
         }
     }
+
     //checks to see if the string is an integer
     public static boolean isInteger(String s) {
 	//sets base 10 for ints
@@ -125,6 +131,7 @@ public class test{
         }
         return true;
     }
+
     //multi method is basically sum method but with a * and result starting at 1
     public static void multi(File input) throws FileNotFoundException{
 	Scanner lineSc = new Scanner(input);
