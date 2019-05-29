@@ -1,9 +1,10 @@
-
+//prints fibanacci sequence using recursion
 import java.io.*;
 import java.util.Scanner;
 
 public class recursion{
     public static void main(String [] args){
+	//gets number of sequence to go to
     	Scanner sc = new Scanner(System.in);
 	System.out.print("Enter a number of repetitions: ");
 	String temp = sc.next();
@@ -16,6 +17,7 @@ public class recursion{
 	System.out.println();
     }
 
+    //actual recursive method that takes in number
     public static int recur(int input){
     	if(input==1 || input == 2){
 	    return 1;
