@@ -9,8 +9,8 @@ public class recursion{
 	String temp = sc.next();
 	int input = Integer.parseInt(temp);
 	System.out.println("Series up to " +input+" :");
-	for(int i=1; i<=input;i++){
-	    System.out.print(recur(input-i)+ " ");
+	for(int i=0; i<input;i++){
+	    System.out.print(recur(i)+ " ");
 
 	}
 	System.out.println();
