@@ -1,3 +1,7 @@
+//James Hawkins
+//Takes the user input and reverses the string
+//Reverses not just the order of words but also reverses the chars in the individual words
+
 import java.util.*;
 public class Reverse{
   	public static void main(String [] args){

@@ -25,7 +25,7 @@ public class bored{
 		System.out.println("Enter a number: ");
 		Scanner sc = new Scanner(System.in);
 		String input = sc.next();
-		for(int i =0; i<Integer.parseInt(input);i++){
+		for(int i = 0; i < Integer.parseInt(input); i++){
 			System.out.println("Cato");
 		}
 	}
@@ -33,11 +33,10 @@ public class bored{
 	//prompts user for a file
 	//is setup to read a guttenburg .txt file
 	//promtps for word to count occurance of in the file
-	//will find the release date 
 	public static void dog(){
 		System.out.print("Enter a file to process: ");
 		Scanner sc = new Scanner(System.in);
-		String input=sc.next();
+		String input = sc.next();
 		System.out.print("Would you like to know the most common word in the file? (yes or no): ");
 		String yer = sc.next();
 		if(yer.toLowerCase().equals("yes")){
@@ -53,8 +52,8 @@ public class bored{
 	//Counts the number of occurances of a word in the file
 	//take in a file name to proccess
 	public static void wordCounter(String input){
-		int lineCount =0;
-		int wordCount=0;
+		int lineCount = 0;
+		int wordCount = 0;
 		Scanner sc = new Scanner(System.in);
 		System.out.print("Enter a word to count: ");
 		String word = sc.next().toLowerCase();
@@ -81,11 +80,11 @@ public class bored{
 					}
 				}
 			}
-			for(int i=0;i<list.size();i++){
+			for(int i = 0; i < list.size(); i++){
 				System.out.println(list.get(i));
 			}
 			System.out.println("File contained "+lineCount+" lines.");
-			System.out.println("File contained ("+word+") "+wordCount+" times.");	
+			System.out.println("File contained (" + word + ") " + wordCount + " times.");	
 		}catch(Exception e){
 			System.out.println(e);
 		}
@@ -114,13 +113,14 @@ public class bored{
 			int check = 0;
 			String result = "";
 			for(String i : map.keySet()){
-				int value =map.get(i);
-				if(value>check){
-					result=i;
-					check =value;
+				int value = map.get(i);
+				if(value > check){
+					result = i;
+					check = value;
 				} 	
 			}
-			System.out.println("The most common word was "+ result+" it appeared: "+check+" times");
+			System.out.println("The most common word was (" + result + ") it appeared: " 
+					   + check+" times");
 		}catch(Exception e){
 			System.out.println(e);
 		}

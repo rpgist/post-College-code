@@ -1,3 +1,6 @@
+//James Hawkins
+//Takes in input and converts it to pigLatin
+
 import java.io.*;
 import java.util.*;
 public class PigLatin {

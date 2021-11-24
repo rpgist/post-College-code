@@ -31,7 +31,7 @@ public class dateAverage{
 					}
 				}
 			}
-			//System.out.println("Made it through adding dates");
+
 			//gets the average date
 			String result = averageDate(dates);
 			System.out.println("The average date is: "+ result);
@@ -72,33 +72,6 @@ public class dateAverage{
 		ArrayList<Integer> years = new ArrayList<Integer>();					
 		for(int i = 0; i < dates.size(); i++){
 			String date = dates.get(i);
-			/*System.out.println("This is date: "+date+" Size of: "+date.())length;
-			if(dates.size()==1){
-				System.out.println("date is just year");
-				int yearToAdd=processDate('y',date);
-				years.add(yearToAdd);
-			}else if(dates.size() > 2){
-				System.out.println("This is date before it goes to day: "+date);
-				int daysTemp = processDate('d',date);
-				String testDate = date;
-				//makes sure that it is a valid day
-				if(daysTemp != -1){
-					System.out.println(daysTemp+" :added to days");
-					days.add(daysTemp);
-				}
-				int monthTemp = processDate('m',date);
-				//makes sure that it is a valid month
-				if(monthTemp != -1){
-					System.out.println(monthTemp+" :added to months");
-					months.add(monthTemp);
-				}
-				int yearsTemp = processDate('y',date);
-				if(yearsTemp != -1){
-					System.out.println(yearsTemp+" :added to years");
-					years.add(yearsTemp);
-				}
-			}
-			*/
 			int yearTemp = -1;
 			int monthsTemp = -1;
 			int dayTemp = -1;
@@ -151,13 +124,6 @@ public class dateAverage{
 	//takes in a string to process as a date
 	//returns int of selected part of a date
 	public static int processDate(char t, String date){
-		/* date = date.toLowerCase();
-		Scanner dateSc = new Scanner(date);
-		ArrayList<String> dateList = new ArrayList<String>();
-		while(dateSc.hasNext()){
-			dateList.add(dateSc.next());
-		}
-		*/
 		if(t =='d'){
 			//process day
 			String temp = date;

@@ -1,3 +1,6 @@
+//James Hawkins
+//takes user input and outputs the input in hex
+
 import java.io.*;
 import java.util.*;
 
